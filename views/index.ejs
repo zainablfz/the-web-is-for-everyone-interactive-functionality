@@ -1,0 +1,47 @@
+<%- include('./partials/head') %>
+
+<!-- <section class="posts">
+  <ul class="home-posts">
+    <% articles.forEach(article => { { %>
+    <li>
+      <a href="/artikel/<%=article.id%>">
+        <img src="<%=article.jetpack_featured_media_url%>" />
+        <h2><%-article.title.rendered%></h2>
+        <section>
+          <h3>
+            <%=article.yoast_head_json.author%>&nbsp;<span
+              class="leestijd-articles"
+            >
+              - 3 min</span
+            >
+          </h3>
+        </section>
+      </a>
+      %>
+    </li>
+    <% } }) %>
+  </ul>
+</section> -->
+
+<main>
+  <ul class="homepage">
+    <% articles.forEach(article => { %>
+    <li class="home-article">
+      <img src="<%=article.jetpack_featured_media_url%>" />
+      <h2><%- article.title.rendered %></h2>
+      <div>
+        <time>
+          <%= new Date(article.date).getDate() %>/<%= new
+          Date(article.date).getMonth() %>/<%= new
+          Date(article.date).getFullYear() %>
+        </time>
+        <span><%= article.shares %> keer gedeeld</span>
+      </div>
+      <p><%- article.excerpt.rendered %></p>
+      <a href="/article/<%= article.slug %>">Lees meer...</a>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+
+<%- include('./partials/foot') %>

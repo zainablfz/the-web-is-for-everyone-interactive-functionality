@@ -35,7 +35,8 @@ header {
   display: none;
 }
 
-.home-posts {
+.homepage,
+.homepage li {
   display: block;
   list-style-type: none;
   margin-block-start: 0em;
@@ -45,40 +46,39 @@ header {
   padding-inline-start: 0px;
 }
 
-.home-posts img {
+.home-article img {
   width: 100%;
   max-width: 600px;
 }
 
-.home-posts li {
+.homepage li {
   border-bottom: var(--border-styles);
   margin: 2em;
   padding: 2em;
 }
 
-.home-posts h2,
-.home-posts h3 {
+.home-article h2 {
   padding: 0.5em 1em 0.5em 1em;
   display: flex;
 }
 
-.home-posts h2 {
+.home-article h2 {
   font-weight: 900;
 }
 
-.home-posts h3 {
+.home-article h3 {
   font-family: var(--font-sans-serif);
   font-weight: 400;
   text-transform: uppercase;
   font-size: 16px;
 }
 
-.home-posts a {
+.home-article a {
   color: var(--primary-color-1);
   text-decoration: none;
 }
 
-.article-post {
+.detail-article {
   padding: 2em;
   display: flex;
   align-items: center;
@@ -87,17 +87,17 @@ header {
   margin: auto;
 }
 
-.article-post h1 {
+.detail-article h1 {
   font-size: 3em;
   text-align: center;
 }
 
-.article-post h4 {
+.detail-article h4 {
   font-size: 25px;
   font-weight: 900;
 }
 
-.article-post img {
+.detail-article img {
   border: var(--border-styles);
   width: 100%;
   max-width: 600px;
@@ -105,12 +105,35 @@ header {
   object-fit: cover;
 }
 
-.article-post p,
-.article-post ul,
-.article-post li {
+.detail-article p,
+.detail-article ul,
+.detail-article li {
   font-family: var(--font-serif);
   font-size: 20px;
-  line-height: 1.8em;
+  line-height: 1.6em;
+}
+
+button {
+  border: var(--border-styles);
+  background-color: var(--secondary-color-1);
+  color: var(--primary-color-4);
+}
+
+.deel-button {
+  background-color: var(--secundary-color-2);
+  color: var(--tertiary-color-4);
+  border: 2px solid var(--active-color-3);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 1em;
+  margin-left: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.deel-button:hover {
+  background-color: var(--primary-color-1); /* Donkerdere paarse kleur */
+  transform: scale(1.05); /* Maak de knop iets groter */
 }
 
 .post-detail_author {

@@ -1,29 +1,24 @@
 <%- include('./partials/head') %>
 
-<section class="article-post">
-  <h1><%-article[0].title.rendered%></h1>
-  <img
-    src="<%-article[0].jetpack_featured_media_url%>"
-    alt="voorpagina afbeelding"
-  />
-  <div class="article-detail_datetype">
-    <p class="article-detail_time">11 maart 2024, 09:00</p>
-  </div>
 
-  <section class="post-detail_author">
-    <section>
-      <h2>
-        <span class="article-detail_author_type">Auteur:</span>
-        <%=article[0].yoast_head_json.author%>
-      </h2>
-    </section>
-    <section>
-      <h2><span class="article-detail_author_type">Leestijd:</span> < 3 min</h2>
-    </section>
-  </section>
-  <section class="article-detail_content">
-    <%-article[0].content.rendered%>
-  </section>
-</section>
+  <main>
+  <a href="/">Terug naar het overzicht</a>
+  <article class="detail-article">
+    <h2><%- article.title.rendered %></h2>
+    <img src="<%=article.jetpack_featured_media_url%>">
+      <div class="detail-article">
+        <span><%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
+      Date(article.date).getFullYear() %></span>
+        <form action="/article/<%= article.slug %>" method="post">
+          <input type="hidden" name="slug" value="<%= article.slug %>">
+          <!-- <label for="share"><span><%= article.shares %> keer gedeeld</span></label> -->
+          <button type="submit" class="deel-button" id="share"><span>Like dit artikel</span></button>
+        </form>
+      </div>
+      
+    </p>
+    <%- article.content.rendered %>
+  </article>
+</main>
+  <%- include('./partials/foot') %>
 
-<%- include('./partials/foot') %>
