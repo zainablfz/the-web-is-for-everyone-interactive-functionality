@@ -5,6 +5,10 @@
   --tertiary-color-4: #d9d9d9;
   --active-color-3: #e85340;
 
+  --accent-color-1: #5340e8;
+  --accent-color-2: #4032a5;
+  --accent-color-3: #f2d930;
+
   --font-sans-serif: "Inter", arial, sans-serif;
   --font-serif: "Merriweather", serif;
   --border-styles: 1px solid var(--primary-color-1);
@@ -22,7 +26,6 @@ img {
 }
 
 header {
-  /* padding-top: 1em; */
   display: flex;
   justify-content: space-between;
   border-width: 0px 0px 1px 0px;
@@ -113,29 +116,62 @@ header {
   line-height: 1.6em;
 }
 
-button {
-  border: var(--border-styles);
-  background-color: var(--secondary-color-1);
-  color: var(--primary-color-4);
-}
-
 .deel-button {
-  background-color: var(--secundary-color-2);
-  color: var(--tertiary-color-4);
-  border: 2px solid var(--active-color-3);
-  border-radius: 50px;
+  background-color: var(--color-bg);
+  color: var(--accent-color-1);
+  font-weight: bold;
+  border: 2px solid var(--accent-color-1);
+  border-radius: 5px;
   padding: 10px 20px;
   margin-top: 1em;
   margin-left: 1em;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  align-items: end;
+
+  & .copied-link {
+    display: none;
+  }
+}
+
+.copied {
+  background-color: var(--accent-color-2);
+  color: white;
+
+  & .share {
+    fill: white;
+  }
+  & .share-link {
+    display: none;
+  }
+  & .copied-link {
+    display: block;
+  }
+}
+
+.share {
+  padding-left: 0.3em;
+  fill: var(--accent-color-1);
 }
 
 .deel-button:hover {
-  background-color: var(--primary-color-1); /* Donkerdere paarse kleur */
-  transform: scale(1.05); /* Maak de knop iets groter */
+  background-color: var(--accent-color-1);
+  color: white;
+  transform: scale(1.05);
+
+  & .share {
+    fill: white;
+  }
 }
 
+.deel-button:active {
+  background-color: var(--accent-color-2);
+  border: 2px solid var(--accent-color-2);
+}
+
+.deel-button:focus {
+  border: 2px solid var(--active-color-3);
+}
 .post-detail_author {
   width: 100%;
   max-width: 600px;

@@ -1,15 +1,19 @@
 import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
+const app = express()
+
 const redpers_url = 'https://redpers.nl/wp-json/wp/v2/posts'
 const directus_url = 'https://fdnd-agency.directus.app/items/redpers_shares'
 
-const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './views')
 app.set('port', process.env.PORT || 8000)
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
+
+
+
 
 app.get('/', (request, response) => {
   fetchJson(redpers_url).then((data) => {
